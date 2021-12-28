@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends "App/padre.html" %}
+
+{% load static %}
+
+        {% block contenido2 %}
+        <h1 class="masthead-heading text-uppercase mb-0">Formulario de Hijo</h1>
+        {% endblock %}
+
+{% block contenido %}
+
+        {% if miFormulario.errors %}
+
+        <p>Error ...!!!</p>
+
+        {% endif %}
+
+        <form action="/AppFamiliar/hijoFormulario" method="POST">{% csrf_token %}
+
+                <table>
+
+                        {{ miFormulario.as_table }}
+                </table>
+
+                <input type="submit" value="Enviar">
+
+        </form>
+
+{% endblock %}
+
+<br>
+<br>
+<br>
+<h1 style="text-align: center; color:rgb(179, 52, 14); font-size:40px">Aca esta el Formulario de los Abuelos</h1>
+
+<p style="text-align: center; color:rgb(49, 19, 219); font-size:30px">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Error doloremque earum soluta repudiandae fugiat ipsum repellat ullam aperiam quo non sequi perspiciatis saepe tempora laboriosam sed laborum, omnis nostrum ab cumque magni provident facilis amet explicabo? Recusandae ducimus omnis sint quod quidem ipsum iste expedita labore quasi aliquid hic itaque nam, perspiciatis laudantium odio</p>

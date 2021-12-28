@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+        
+
+        {% block contenido %}
+
+
+    <br>
+    
+    <h1>Te deslogueaste de la pagina. oohhh..):</h1>
+    <br>
+    <form action="{% url 'Login' %}">
+        <input type="submit" value="Ir al Login" />
+    </form>
+    
+    <h3>Regresar al ===> <a  href="{% url 'Login' %}">Login</a></h3>
+    
+        {% endblock %}
+
+    
