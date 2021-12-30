@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+{% block contenido %}
+
+        {% if miFormulario.errors %}
+
+        <p>Error ...!!!</p>
+
+        {% endif %}
+
+        <form action="/AppFamiliar/hijoFormulario" method="POST">{% csrf_token %}
+
+                <table>
+
+                        {{ miFormulario.as_table }}
+                </table>
+
+                <input type="submit" value="Enviar">
+
+        </form>
+
+{% endblock %}
+
+<br>
+<br>
+<br>
+<h1 style="text-align: center; color:rgb(179, 52, 14); font-size:40px">Aca esta el Formulario de los Abuelos</h1>
+<br>
