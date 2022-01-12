@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+        {% block contenido %}
+
+                {% for b in blogs %}
+
+                        <!--<ul><li>   {{ b }}  </li></ul>-->
+                        <p>Titulo del Blog : <em> {{ b.title}}</em></p>
+                        <p>numero : <em> {{ b.numero}}</em></p>
+                        <p>Descripcion : <em> {{ b.description}}</em></p>
+                        <p>BloggerDireccion: <em> {{ blogger.address}}</em></p>
+                        <p>Ciudad: <em> {{ blogger.city}}</em></p>
+                        <p>Pais: <em> {{ blogger.state}}</em></p>
+                        <p>Codigo postal: <em> {{ blogger.zip}}</em></p>
+                        <p>Website: <em> {{ blogger.website}}</em></p>
+                        <p>Empresa: <em> {{ blogger.company}}</em></p>
+                        <p>Descripcion: <em> {{ blogger.about}}</em></p>
+                        <p>Fecha de creacion: <em> {{ blogger.created_at}}</em></p>
+                        <p>Fecha de actualizacion: <em> {{ blogger.updated_at}}</em></p>
+
+                        <button>
+                                <a href="{% url 'EliminarBlog' b.numero %}">Eliminar</a>
+                                <a href="{% url 'EditarBlog' b.numero %}">Editar</a>
+                        </button>
+                        <br>
+                {% endfor %}
+
+                <a href="{% url 'BlogFormulario'%}">Añadir otro Blog</a>
+
+        
+        {% endblock %}

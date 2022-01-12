@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+        {% block contenido %}
+
+                {% for b in blogs %}
+
+                        <ul><li>   {{ b }}  </li></ul>
+                        <button>
+                                <a href="{% url 'EliminarBlog' b.numero_para_ %}">Eliminar</a>
+                                <a href="{% url 'EditarBlog' b.numero %}">Editar</a>
+                        </button>
+                        <br>
+                {% endfor %}
+
+                <a href="{% url 'BlogFormulario'%}">Añadir otro Blog</a>
+
+        
+        {% endblock %}
