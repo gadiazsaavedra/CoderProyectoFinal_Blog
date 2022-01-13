@@ -21,7 +21,9 @@
           <p>Descripcion: <em> {{ blogger.about}}</em></p>
           <p>Fecha de creacion: <em> {{ blogger.created_at}}</em></p>
           <p>Fecha de actualizacion: <em> {{ blogger.updated_at}}</em></p>-->
-          <p>Nombre del blogger: <em> {{ blogger.username}}</em></p>  
+          <p>Nombre del blogger: <em> {{ user.username}}</em></p>
+          <p>Apellido del blogger: <em> {{ user.last_name}}</em></p>
+          <p>mail: <em> {{ user.email}}</em></p>  
           <p>
 
             <a href="{% url 'List' %}">Regresar</a>

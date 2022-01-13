@@ -5,23 +5,34 @@
 
         {% block contenido %}
 
+                {% if blogs %}
+
                 {% for b in blogs %}
 
                         <!--<ul><li>   {{ b }}  </li></ul>-->
-                        <p>Titulo del Blog : <em> {{ b.title}}</em></p>
-                        <p>numero : <em> {{ b.numero}}</em></p>
-                        <p>Descripcion : <em> {{ b.description}}</em></p>
-                        <p>Blogger : <em> {{ b.blogger.username}}</em></p>
-                        <p>Creado el : <em> {{ b.created_at}}</em></p>
-                        <p>Actualizado el : <em> {{ b.updated_at}}</em></p>
+                        <p><b>Titulo del Blog:</b> <em> {{ b.title}}</em></p>
+                        <p><b>Número:</b> <em> {{ b.numero}}</em></p>
+                        <p><b>Descripción:</b> <em> {{ b.description}}</em></p>
+                        <p><b>Blogger:</b> <em> {{ b.blogger.username}}</em></p>
+                        <p><b>Creado el:</b> <em> {{ b.created_at}}</em></p>
+                        <p><b>Actualizado el:</b> <em> {{ b.updated_at}}</em></p>
+                        <button>
+                                <a href="{% url 'EditarBlog' b.numero %}">Editar</a>
+                        </button>
                         <button>
                                 <a href="{% url 'EliminarBlog' b.numero %}">Eliminar</a>
-                                <a href="{% url 'EditarBlog' b.numero %}">Editar</a>
+                        </button>
+                        <button>
+                                <a href="{% url 'BlogFormulario'%}">Añadir otro Blog</a>
                         </button>
                         <br>
                 {% endfor %}
 
-                <a href="{% url 'BlogFormulario'%}">Añadir otro Blog</a>
+                {% else %}
+       
+                <h2>Aún no hay blogs subidos <i class="far fa-sad-tear"></i></h2>
+                <p>¿Querés agregar alguno? Clic <a href = "{% url 'BlogFormulario' %}"> acá</a>.</p>
 
+                {% endif %}
         
         {% endblock %}

@@ -114,21 +114,21 @@ class UserDetail(DetailView):
 class UserCreacion(CreateView):
     
     model = User
-    success_url = "../blogger/list"
+    success_url = "../user/list"
     fields = ["username", "first_name", "last_name", "email"]
     
 #modificar!!!!!!!!!!!  
 class UserUpdate(UpdateView):
     
     model = User
-    success_url = "../blogger/list"
-    fields = ["name", "email", "phone", "address", "city", "state", "zip", "website", "company", "about", "created_at", "updated_at"]
+    success_url = "../user/list"
+    fields = ["username", "first_name", "last_name", "email"]
   
 #Borrar   
 class UserDelete(DeleteView):
     
     model = User
-    success_url = "../blogger/list"
+    success_url = "../user/list"
     
     
 
