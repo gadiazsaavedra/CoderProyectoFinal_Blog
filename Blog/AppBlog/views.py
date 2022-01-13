@@ -14,7 +14,7 @@ from django.views.generic.detail import DetailView
 from django.views import generic
 from .models import Post
 from django.db import models
-
+from django.contrib.auth.models import User
 
 
 
@@ -29,7 +29,8 @@ def editarBlog(request, numero_para_editar):
                 blog.title = informacion['title']
                 blog.numero = informacion['numero']
                 blog.description = informacion['description']
-                blog.blogger = informacion['blogger']
+                #blog.blogger = informacion['blogger']
+                blog.blogger = User.objects.get(username=informacion['blogger'])
                 blog.created_at = informacion['created_at']
                 blog.updated_at = informacion['updated_at']
                 blog.save()
@@ -64,7 +65,7 @@ def blogFormulario(request):
                     title=informacion['title'],
                     numero=informacion['numero'],
                     description=informacion['description'],
-                    blogger = Blogger.objects.get(name=informacion['blogger']),
+                    blogger = User.objects.get(username=informacion['blogger']),
                     created_at=informacion['created_at'],
                     updated_at=informacion['updated_at'])               
                 blo.save()
@@ -98,35 +99,35 @@ from django.views.generic.edit import  CreateView, UpdateView, DeleteView
 
 
 #Leer --- nos da todos los padres
-class BloggerList(ListView):
+class UserList(ListView):
     
-    model = Blogger
+    model = User
     template_name = "AppBlog/bloggers_list.html"
     
 #Detalle - SUPER Leer - Buscar!!!!!
-class BloggerDetail(DetailView):
+class UserDetail(DetailView):
     
-    model = Blogger
+    model = User
     template_name = "AppBlog/blogger_detail.html"
     
 #Crear elementos
-class BloggerCreacion(CreateView):
+class UserCreacion(CreateView):
     
-    model = Blogger
+    model = User
     success_url = "../blogger/list"
-    fields = ["name", "email", "phone", "address", "city", "state", "zip", "website", "company", "about", "created_at", "updated_at"]
+    fields = ["username", "first_name", "last_name", "email"]
     
 #modificar!!!!!!!!!!!  
-class BloggerUpdate(UpdateView):
+class UserUpdate(UpdateView):
     
-    model = Blogger
+    model = User
     success_url = "../blogger/list"
     fields = ["name", "email", "phone", "address", "city", "state", "zip", "website", "company", "about", "created_at", "updated_at"]
   
 #Borrar   
-class BloggerDelete(DeleteView):
+class UserDelete(DeleteView):
     
-    model = Blogger
+    model = User
     success_url = "../blogger/list"
     
     

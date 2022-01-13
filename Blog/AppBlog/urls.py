@@ -13,19 +13,19 @@ urlpatterns = [
     path('eliminarBlog/<numero_para_borrar>/', views.eliminarBlog, name='EliminarBlog'),
     path('editarBlog/<numero_para_editar>/', views.editarBlog, name='EditarBlog'),
     
-    path('blog/list', views.BlogList.as_view(), name='BlogList'),
-    path(r'^(?P<pk>\d+)$', views.BlogDetail.as_view(), name='BlogDetail'),
-    path(r'^nuevo$', views.BlogCreacion.as_view(), name='New'),
-    path(r'^editar/(?P<pk>\d+)$', views.BlogUpdate.as_view(), name='BlogEdit'),
-    path(r'^borrar/(?P<pk>\d+)$', views.BlogDelete.as_view(), name='BlogDelete'),
+    #path('blog/list', views.BlogList.as_view(), name='BlogList'),
+    #path(r'^(?P<pk>\d+)$', views.BlogDetail.as_view(), name='BlogDetail'),
+    #path(r'^nuevo$', views.BlogCreacion.as_view(), name='New'),
+    #path(r'^editar/(?P<pk>\d+)$', views.BlogUpdate.as_view(), name='BlogEdit'),
+    #path(r'^borrar/(?P<pk>\d+)$', views.BlogDelete.as_view(), name='BlogDelete'),
     
     
         
-    path('blogger/list', views.BloggerList.as_view(), name='List'),
-    path(r'^(?P<pk>\d+)$', views.BloggerDetail.as_view(), name='Detail'),
-    path(r'^nuevo$', views.BloggerCreacion.as_view(), name='New'),
-    path(r'^editar/(?P<pk>\d+)$', views.BloggerUpdate.as_view(), name='Edit'),
-    path(r'^borrar/(?P<pk>\d+)$', views.BloggerDelete.as_view(), name='Delete'),
+    path('user/list', views.UserList.as_view(), name='List'),
+    path(r'^(?P<pk>\d+)$', views.UserDetail.as_view(), name='Detail'),
+    path(r'^nuevo$', views.UserCreacion.as_view(), name='New'),
+    path(r'^editar/(?P<pk>\d+)$', views.UserUpdate.as_view(), name='Edit'),
+    path(r'^borrar/(?P<pk>\d+)$', views.UserDelete.as_view(), name='Delete'),
     
     
     

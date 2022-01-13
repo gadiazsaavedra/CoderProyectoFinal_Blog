@@ -11,15 +11,15 @@
 
           <p>Acá tenemos todos los Bloggers:</p> <br>
           <ul>
-              {% for blogger in object_list %}
+              {% for user in object_list %}
                   <li>
 
-                      <p>NOMBRE: {{ blogger.name }}</p>
+                      <p>NOMBRE: {{ user.username }}</p>
 
                               <p>
-                                <a href="{% url 'Detail' blogger.id %}">Ver más</a>
-                                <a href="{% url 'Edit' blogger.id %}">Editar</a>
-                                <a href="{% url 'Delete' blogger.id %}">Borrar</a>
+                                <a href="{% url 'Detail' user.id %}">Ver más</a>
+                                <a href="{% url 'Edit' user.id %}">Editar</a>
+                                <a href="{% url 'Delete' user.id %}">Borrar</a>
 
                               </p>
 

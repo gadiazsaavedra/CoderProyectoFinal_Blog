@@ -9,7 +9,7 @@
 
         {% block contenido %}
 
-          <p>Nombre del blogger: <em> {{ blogger.name}}</em></p>
+          <!--<p>Nombre del blogger: <em> {{ blogger.name}}</em></p>
           <p>mail: <em> {{ blogger.email}}</em></p>
           <p>Telefono: <em> {{ blogger.phone}}</em></p>
           <p>Direccion: <em> {{ blogger.address}}</em></p>
@@ -20,8 +20,8 @@
           <p>Empresa: <em> {{ blogger.company}}</em></p>
           <p>Descripcion: <em> {{ blogger.about}}</em></p>
           <p>Fecha de creacion: <em> {{ blogger.created_at}}</em></p>
-          <p>Fecha de actualizacion: <em> {{ blogger.updated_at}}</em></p>
-
+          <p>Fecha de actualizacion: <em> {{ blogger.updated_at}}</em></p>-->
+          <p>Nombre del blogger: <em> {{ blogger.username}}</em></p>  
           <p>
 
             <a href="{% url 'List' %}">Regresar</a>

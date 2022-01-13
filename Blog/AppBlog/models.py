@@ -56,7 +56,8 @@ class Blog(models.Model):
     title = models.CharField(max_length=100)
     numero = models.IntegerField()
     description = models.TextField(max_length=500)
-    blogger = models.ForeignKey(Blogger, on_delete=models.CASCADE)
+    #blogger = models.ForeignKey(Blogger, on_delete=models.CASCADE)
+    blogger = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
     
